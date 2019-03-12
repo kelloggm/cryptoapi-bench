@@ -16,4 +16,7 @@ CP="${KMSJAR}:${CRYPTOJAR}"
 
 find . -name "*.java" > arg_file
 
-sh ${CFJAVAC} -processor ${APS} -classpath ${CP} -Astubs="stubs/kms:stubs/crypto" @arg_file
+rm -rf build
+mkdir build
+
+sh ${CFJAVAC} -processor ${APS} -classpath ${CP} -Astubs="stubs/kms:stubs/crypto" -d ${CD}/build @arg_file
