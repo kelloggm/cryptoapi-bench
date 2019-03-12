@@ -1,23 +1,28 @@
 package org.cryptoapi.bench.brokencrypto;
 
-import javax.crypto.*;
+import org.checkerframework.common.value.qual.StringVal;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-import org.checkerframework.common.value.qual.StringVal;
-
-public class BrokenCryptoABSCase1 {
-    Crypto2 crypto;
-    public BrokenCryptoABSCase1() throws NoSuchAlgorithmException, NoSuchPaddingException {
-        crypto = new Crypto2("DES/ECB/PKCS5Padding");
+public class BrokenCryptoABSCorrected {
+    Crypto0 crypto;
+    public BrokenCryptoABSCorrected() throws NoSuchAlgorithmException, NoSuchPaddingException {
+        crypto = new Crypto0("AES/CBC/PKCS5Padding");
     }
 }
 
-class Crypto2 {
+class Crypto0 {
     Cipher cipher;
-    @StringVal("DES/ECB/PKCS5Padding") String defaultAlgo;
-    public Crypto2(@StringVal("DES/ECB/PKCS5Padding") String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    @StringVal("AES/CBC/PKCS5Padding") String defaultAlgo;
+    public Crypto0(@StringVal("AES/CBC/PKCS5Padding") String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
         defaultAlgo = defAlgo;
     }
 

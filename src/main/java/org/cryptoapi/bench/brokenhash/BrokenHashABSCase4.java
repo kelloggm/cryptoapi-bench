@@ -8,6 +8,8 @@ import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 public class BrokenHashABSCase4 {
     CryptoHash4 crypto;
     public BrokenHashABSCase4() throws NoSuchAlgorithmException, NoSuchPaddingException {
@@ -16,9 +18,9 @@ public class BrokenHashABSCase4 {
 }
 
 class CryptoHash4 {
-    String crypto;
+    @StringVal("MD2") String crypto;
 
-    public CryptoHash4(String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public CryptoHash4(@StringVal("MD2") String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
         crypto = defCrypto;
     }
 

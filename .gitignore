@@ -8,3 +8,6 @@ out
 cov-int
 myproject.tgz
 build
+*.class
+arg_file
+*~
