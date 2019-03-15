@@ -6,9 +6,10 @@ import java.security.NoSuchAlgorithmException;
 
 public class InputDependent2Corrected {
     public static void main (String [] args) throws NoSuchAlgorithmException {
-        if (!args[1].equals("SHA-256")) {
+        String input = args[1];
+        if (!input.equals("SHA-256")) {
             return;
         }
-        MessageDigest message = MessageDigest.getInstance(args[1]);
+        MessageDigest message = MessageDigest.getInstance(input);
     }
 }
