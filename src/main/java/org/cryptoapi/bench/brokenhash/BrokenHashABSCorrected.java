@@ -8,9 +8,11 @@ import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class BrokenHashABSCase1 {
+import org.checkerframework.common.value.qual.StringVal;
+
+public class BrokenHashABSCorrected {
     CryptoHash0 crypto;
-    public BrokenHashABSCase1() throws NoSuchAlgorithmException, NoSuchPaddingException {
+    public BrokenHashABSCorrected() throws NoSuchAlgorithmException, NoSuchPaddingException {
         crypto = new CryptoHash0("SHA-256");
     }
 
