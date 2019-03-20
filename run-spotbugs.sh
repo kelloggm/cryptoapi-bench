@@ -29,5 +29,5 @@ for inputdir in ${inputdirs}; do
     echo "-------------"
     echo "${inputdir}"
     echo "-------------"
-    java -jar $SPOTBUGSJAR -textui ${CD}/build/org/cryptoapi/bench/${inputdir}/
+    java -jar $SPOTBUGSJAR -textui -include spotbugs-security-include.xml -low ${CD}/build/org/cryptoapi/bench/${inputdir}/
 done
