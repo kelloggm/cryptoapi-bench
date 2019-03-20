@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CD=`pwd`
+source utils.sh
 
 CFJAVAC="${CD}/../../../jsr308/checker-framework/checker/bin-devel/javac"
 
@@ -14,13 +14,7 @@ CRYPTOJAR="${CD}/../aws-crypto-policy-compliance-checker/build/libs/aws-crypto-p
 
 CP="${KMSJAR}:${CRYPTOJAR}"
 
-rm arg_file
-touch arg_file
-
-find src/main/java/org/cryptoapi/bench/ecbcrypto -name "*.java" >> arg_file
-find src/main/java/org/cryptoapi/bench/brokenhash -name "*.java" >> arg_file
-find src/main/java/org/cryptoapi/bench/brokencrypto -name "*.java" >> arg_file
-find src/main/java/org/cryptoapi/bench/insecureasymmetriccrypto -name "*.java" >> arg_file
+create_argfile
 
 rm -rf build
 mkdir build
