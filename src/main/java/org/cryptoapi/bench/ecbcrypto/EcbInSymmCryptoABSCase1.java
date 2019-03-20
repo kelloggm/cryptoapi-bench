@@ -7,6 +7,8 @@ import javax.crypto.SecretKey;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 public class EcbInSymmCryptoABSCase1 {
     CryptoECB1 crypto;
     public EcbInSymmCryptoABSCase1() {
@@ -16,13 +18,13 @@ public class EcbInSymmCryptoABSCase1 {
 }
 
 class CryptoECB1 {
-    String defAlgo;
+    @StringVal("AES/ECB/PKCS5Padding") String defAlgo;
 
-    public CryptoECB1(String algo) {
+    public CryptoECB1(@StringVal("AES/ECB/PKCS5Padding") String algo) {
         defAlgo = algo;
     }
 
-    public void encrypt(String passedAlgo) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
+    public void encrypt(@StringVal("AES/ECB/PKCS5Padding") String passedAlgo) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
 
         if(passedAlgo.isEmpty()){
             passedAlgo = defAlgo;

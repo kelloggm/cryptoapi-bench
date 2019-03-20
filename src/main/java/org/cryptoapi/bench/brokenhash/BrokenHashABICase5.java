@@ -3,10 +3,12 @@ package org.cryptoapi.bench.brokenhash;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 public class BrokenHashABICase5 {
     public static final String DEFAULT_CRYPTO = "SHA1";
-    private static char[] CRYPTO;
-    private static char[] crypto;
+    private static char @StringVal("SHA1") [] CRYPTO;
+    private static char @StringVal("SHA1") [] crypto;
     public static void main (String [] args) throws NoSuchAlgorithmException {
         String str = "abcdef";
         go2();

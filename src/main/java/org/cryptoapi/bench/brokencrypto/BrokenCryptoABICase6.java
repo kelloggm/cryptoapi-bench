@@ -7,10 +7,12 @@ import javax.crypto.SecretKey;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 public class BrokenCryptoABICase6 {
     public static final String DEFAULT_CRYPTO = "Blowfish";
-    private static char[] CRYPTO;
-    private static char[] crypto;
+    private static char @StringVal("Blowfish") [] CRYPTO;
+    private static char @StringVal("Blowfish") [] crypto;
     public void go() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         SecretKey key = keyGen.generateKey();

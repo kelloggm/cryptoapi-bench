@@ -7,8 +7,10 @@ import javax.crypto.SecretKey;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 public class BrokenCryptoABICase3 {
-    public void go(String crypto) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+    public void go(@StringVal("RC4") String crypto) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("RC4");
         SecretKey key = keyGen.generateKey();
         Cipher cipher = Cipher.getInstance(crypto);
