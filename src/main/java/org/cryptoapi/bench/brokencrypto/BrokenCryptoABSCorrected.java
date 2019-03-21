@@ -1,6 +1,8 @@
 package org.cryptoapi.bench.brokencrypto;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -21,8 +23,8 @@ public class BrokenCryptoABSCorrected {
 
 class Crypto0 {
     Cipher cipher;
-    @StringVal("AES/CBC/PKCS5Padding") String defaultAlgo;
-    public Crypto0(@StringVal("AES/CBC/PKCS5Padding") String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    /*@StringVal("AES/CBC/PKCS5Padding")*/ String defaultAlgo;
+    public Crypto0(/*@StringVal("AES/CBC/PKCS5Padding")*/ String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
         defaultAlgo = defAlgo;
     }
 

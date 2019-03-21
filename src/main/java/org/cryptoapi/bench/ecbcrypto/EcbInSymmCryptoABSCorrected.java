@@ -1,6 +1,8 @@
 package org.cryptoapi.bench.ecbcrypto;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -18,13 +20,13 @@ public class EcbInSymmCryptoABSCorrected {
 }
 
 class CryptoECB0 {
-    @StringVal("AES/CBC/PKCS5Padding") String defAlgo;
+    /*@StringVal("AES/CBC/PKCS5Padding")*/ String defAlgo;
 
-    public CryptoECB0(@StringVal("AES/CBC/PKCS5Padding") String algo) {
+    public CryptoECB0(/*@StringVal("AES/CBC/PKCS5Padding")*/ String algo) {
         defAlgo = algo;
     }
 
-    public void encrypt(@StringVal("AES/CBC/PKCS5Padding") String passedAlgo) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
+    public void encrypt(/*@StringVal("AES/CBC/PKCS5Padding")*/ String passedAlgo) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException {
 
         if(passedAlgo.isEmpty()){
             passedAlgo = defAlgo;

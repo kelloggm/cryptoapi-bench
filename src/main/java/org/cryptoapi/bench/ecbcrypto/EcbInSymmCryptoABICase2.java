@@ -7,12 +7,14 @@ import javax.crypto.SecretKey;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class EcbInSymmCryptoABICase2 {
     public static final String DEFAULT_CRYPTO = "AES/ECB/PKCS5Padding";
-    private static char @StringVal("AES/ECB/PKCS5Padding") [] CRYPTO;
-    private static char @StringVal("AES/ECB/PKCS5Padding") [] crypto;
+    private static char /*@StringVal("AES/ECB/PKCS5Padding")*/ [] CRYPTO;
+    private static char /*@StringVal("AES/ECB/PKCS5Padding")*/ [] crypto;
     public void go() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         SecretKey key = keyGen.generateKey();

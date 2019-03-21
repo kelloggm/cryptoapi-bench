@@ -3,12 +3,14 @@ package org.cryptoapi.bench.brokenhash;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class BrokenHashABICase8 {
     public static final String DEFAULT_CRYPTO = "MD2";
-    private static char @StringVal("MD2") [] CRYPTO;
-    private static char @StringVal("MD2") [] crypto;
+    private static char /*@StringVal("MD2")*/ [] CRYPTO;
+    private static char /*@StringVal("MD2")*/ [] crypto;
     public static void main (String [] args) throws NoSuchAlgorithmException {
         String str = "abcdef";
         go2();

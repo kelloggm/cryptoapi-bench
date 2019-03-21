@@ -5,7 +5,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class BrokenCryptoABSCase4 {
     Crypto5 crypto;
@@ -17,8 +19,8 @@ public class BrokenCryptoABSCase4 {
 
 class Crypto5 {
     Cipher cipher;
-    @StringVal("RC2") String defaultAlgo;
-    public Crypto5(@StringVal("RC2") String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    /*@StringVal("RC2")*/ String defaultAlgo;
+    public Crypto5(/*@StringVal("RC2")*/ String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
         defaultAlgo = defAlgo;
     }
 

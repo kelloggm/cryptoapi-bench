@@ -7,12 +7,14 @@ import javax.crypto.SecretKey;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class BrokenCryptoABICase5 {
     public static final String DEFAULT_CRYPTO = "DES/ECB/PKCS5Padding";
-    private static char @StringVal("DES/ECB/PKCS5Padding") [] CRYPTO;
-    private static char @StringVal("DES/ECB/PKCS5Padding") [] crypto;
+    private static char /*@StringVal("DES/ECB/PKCS5Padding")*/ [] CRYPTO;
+    private static char /*@StringVal("DES/ECB/PKCS5Padding")*/ [] crypto;
     public void doCrypto() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("DES");
         SecretKey key = keyGen.generateKey();

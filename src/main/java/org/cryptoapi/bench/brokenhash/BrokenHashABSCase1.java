@@ -6,7 +6,9 @@ import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class BrokenHashABSCase1 {
     CryptoHash1 crypto;
@@ -16,9 +18,9 @@ public class BrokenHashABSCase1 {
 }
 
 class CryptoHash1 {
-    @StringVal("SHA1") String crypto;
+    /*@StringVal("SHA1")*/ String crypto;
 
-    public CryptoHash1(@StringVal("SHA1") String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public CryptoHash1(/*@StringVal("SHA1")*/ String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
         crypto = defCrypto;
     }
 

@@ -4,7 +4,9 @@ import javax.crypto.NoSuchPaddingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 public class BrokenHashABSCase3 {
     CryptoHash3 crypto;
@@ -15,9 +17,9 @@ public class BrokenHashABSCase3 {
 }
 
 class CryptoHash3 {
-    @StringVal("MD4") String crypto;
+    /*@StringVal("MD4")*/ String crypto;
 
-    public CryptoHash3(@StringVal("MD4") String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public CryptoHash3(/*@StringVal("MD4")*/ String defCrypto) throws NoSuchPaddingException, NoSuchAlgorithmException {
         crypto = defCrypto;
     }
 

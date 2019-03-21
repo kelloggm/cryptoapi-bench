@@ -1,6 +1,8 @@
 package org.cryptoapi.bench.ecbcrypto;
 
+/*>>>
 import org.checkerframework.common.value.qual.StringVal;
+*/
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -11,8 +13,8 @@ import java.security.NoSuchAlgorithmException;
 
 public class EcbInSymmCryptoABICorrected2 {
     public static final String DEFAULT_CRYPTO = "AES/CBC/PKCS5Padding";
-    private static char @StringVal("AES/CBC/PKCS5Padding") [] CRYPTO;
-    private static char @StringVal("AES/CBC/PKCS5Padding") [] crypto;
+    private static char /*@StringVal("AES/CBC/PKCS5Padding")*/ [] CRYPTO;
+    private static char /*@StringVal("AES/CBC/PKCS5Padding")*/ [] crypto;
     public void go() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         SecretKey key = keyGen.generateKey();
