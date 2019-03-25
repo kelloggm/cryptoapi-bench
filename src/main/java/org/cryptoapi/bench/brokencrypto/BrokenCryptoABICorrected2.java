@@ -12,9 +12,9 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class BrokenCryptoABICorrected2 {
-    public static final String DEFAULT_CRYPTO = "AES/CBC/PKCS5Padding";
-    private static char /*@StringVal("AES/CBC/PKCS5Padding")*/ [] CRYPTO;
-    private static char /*@StringVal("AES/CBC/PKCS5Padding")*/ [] crypto;
+    public static final String DEFAULT_CRYPTO = "AES/GCM/NoPadding";
+    private static char /*@StringVal("AES/GCM/NoPadding")*/ [] CRYPTO;
+    private static char /*@StringVal("AES/GCM/NoPadding")*/ [] crypto;
     public void go() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         SecretKey key = keyGen.generateKey();

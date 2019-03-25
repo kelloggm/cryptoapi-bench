@@ -12,7 +12,7 @@ public class InputDependentCorrected {
     public void go(boolean safe) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         String algorithm, shortName;
         if (safe) {
-            algorithm = "AES/CBC/PKCS5Padding";
+            algorithm = "AES/GCM/NoPadding";
             shortName = "AES";
         } else {
             throw new IllegalArgumentException("only do safe things");
@@ -25,6 +25,6 @@ public class InputDependentCorrected {
 
     public static void main (String [] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         InputDependentCorrected bc = new InputDependentCorrected();
-        bc.go(args[1].equals("I want to be safe"));
+        bc.go("I want to be safe".equals(args[1]));
     }
 }

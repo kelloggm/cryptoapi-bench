@@ -17,14 +17,14 @@ import java.security.NoSuchAlgorithmException;
 public class BrokenCryptoABSCorrected {
     Crypto0 crypto;
     public BrokenCryptoABSCorrected() throws NoSuchAlgorithmException, NoSuchPaddingException {
-        crypto = new Crypto0("AES/CBC/PKCS5Padding");
+        crypto = new Crypto0("AES/GCM/NoPadding");
     }
 }
 
 class Crypto0 {
     Cipher cipher;
     /*@StringVal("AES/CBC/PKCS5Padding")*/ String defaultAlgo;
-    public Crypto0(/*@StringVal("AES/CBC/PKCS5Padding")*/ String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
+    public Crypto0(/*@StringVal("AES/GCM/NoPadding")*/ String defAlgo) throws NoSuchPaddingException, NoSuchAlgorithmException {
         defaultAlgo = defAlgo;
     }
 

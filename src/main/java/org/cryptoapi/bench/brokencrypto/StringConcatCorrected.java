@@ -11,8 +11,8 @@ import java.security.NoSuchAlgorithmException;
 public class StringConcatCorrected {
 
     private final String first = "AES";
-    private final String second = "CBC";
-    private final String third = "PKCS5Padding";
+    private final String second = "GCM";
+    private final String third = "NoPadding";
 
     public void go() throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("A" + "ES");

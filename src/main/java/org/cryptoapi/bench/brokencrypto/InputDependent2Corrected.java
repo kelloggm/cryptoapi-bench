@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class InputDependent2Corrected {
     public static void main (String [] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
-        if (!args[1].equals("AES") || !args[2].equals("AES/CBC/PKCS5Padding")) {
+        if (!"AES".equals(args[1]) || !"AES/GCM/NoPadding".equals(args[2])) {
             return;
         }
 

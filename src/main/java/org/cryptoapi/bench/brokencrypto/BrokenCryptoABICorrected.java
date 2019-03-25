@@ -12,7 +12,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class BrokenCryptoABICorrected {
-    public void doCrypto(/*@StringVal("AES/CBC/PKCS5Padding")*/ String crypto) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
+    public void doCrypto(/*@StringVal("AES/GCM/NoPadding")*/ String crypto) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
         SecretKey key = keyGen.generateKey();
         Cipher cipher = Cipher.getInstance(crypto);
@@ -21,7 +21,7 @@ public class BrokenCryptoABICorrected {
 
     public static void main (String [] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException {
         BrokenCryptoABICorrected bc = new BrokenCryptoABICorrected();
-        String crypto = "AES/CBC/PKCS5Padding";
+        String crypto = "AES/GCM/NoPadding";
         bc.doCrypto(crypto);
     }
 }
